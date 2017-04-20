@@ -4,15 +4,15 @@
 
 int main() {
     int m, n, k;
-    char *kek = 0;
+    char *kek = (char*)calloc(10000, sizeof(int));
     scanf("%d %d", &m, &n);
-    int *a=(int*)malloc(100000*sizeof(int)); 
-    char **Mas=(char**)malloc(100000*sizeof(char*));
+	int *a=(int*)malloc(100000*sizeof(int)); 
+    char **Mas=(char**)malloc(n*sizeof(char*));
     for(int i = 0; i < n; i++){
 		Mas[i]=(char*)malloc(100000*sizeof(char));
         scanf("%s %d", Mas[i], &a[i]);
     }
-      for( int i = 0; i < n; i++){
+    for( int i = 0; i < n; i++){
 		for(int j = 1; j < n; j++){
 			if( strcmp (Mas[i], Mas[j]) == 0 && a[i] < a[j] ){
 				k = a[n-1];
